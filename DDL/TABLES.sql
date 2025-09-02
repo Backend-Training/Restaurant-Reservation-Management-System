@@ -14,7 +14,7 @@ DROP TABLE IF EXISTS Tables;
 -- Creation Of Tables Without Constraints
 
 CREATE TABLE Restaurants ( 
-    RestaurantId INT PRIMARY KEY, 
+    RestaurantId INT IDENTITY(1,1) PRIMARY KEY, -- Auto Increment Field
     Name VARCHAR(100), 
     Address VARCHAR(100), 
     PhoneNumber VARCHAR(20), 
@@ -22,7 +22,7 @@ CREATE TABLE Restaurants (
 );
 
 CREATE TABLE MenuItems (
-    ItemId INT PRIMARY KEY,
+    ItemId INT IDENTITY(1,1) PRIMARY KEY,
     RestaurantId INT,
     Name VARCHAR(100),
     Description TEXT,
@@ -30,14 +30,14 @@ CREATE TABLE MenuItems (
 );
 
 CREATE TABLE OrderItems (
-    OrderItemId INT PRIMARY KEY,
+    OrderItemId INT IDENTITY(1,1) PRIMARY KEY,
     OrderId INT,
     ItemId INT,
     Quantity INT
 );
 
 CREATE TABLE Orders (
-    OrderId INT PRIMARY KEY,
+    OrderId INT IDENTITY(1,1) PRIMARY KEY,
     ReservationId INT,
     EmployeeId INT,
     OrderDate DATETIME,
@@ -45,7 +45,7 @@ CREATE TABLE Orders (
 );
 
 CREATE TABLE Employees (
-    EmployeeId INT PRIMARY KEY,
+    EmployeeId INT IDENTITY(1,1) PRIMARY KEY,
     RestaurantId INT,
     FirstName VARCHAR(50),
     LastName VARCHAR(50),
@@ -53,7 +53,7 @@ CREATE TABLE Employees (
 );
 
 CREATE TABLE Reservations (
-    ReservationId INT PRIMARY KEY,
+    ReservationId INT IDENTITY(1,1) PRIMARY KEY,
     CustomerId INT,
     RestaurantId INT,
     TableId INT,
@@ -62,7 +62,7 @@ CREATE TABLE Reservations (
 );
 
 CREATE TABLE Customers (
-    CustomerId INT PRIMARY KEY,
+    CustomerId INT IDENTITY(1,1) PRIMARY KEY,
     FirstName VARCHAR(50),
     LastName VARCHAR(50),
     Email VARCHAR(100),
@@ -70,7 +70,7 @@ CREATE TABLE Customers (
 );
 
 CREATE TABLE Tables (
-    TableId INT PRIMARY KEY,
+    TableId INT IDENTITY(1,1) PRIMARY KEY,
     RestaurantId INT,
     Capacity INT
 );
