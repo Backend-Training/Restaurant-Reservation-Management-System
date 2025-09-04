@@ -13,4 +13,4 @@ This project provides a relational database design and implementation in Microso
 
 ## ERD Model
 
-![ERD](ERDModel.jpg)
+![ERD](Design/ERDModel.jpg)
